@@ -29,8 +29,10 @@ import requests, json
 # Parameters
 #main variables
 user = "api"
+account = "api"
 # saving passwords in scripts is unsecure see episode 2 on how to secure your
 # passwords. see link
+account_password = "pass"
 password = "pass"
 bamurl = "bam.lab.corp"
 

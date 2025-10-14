@@ -45,7 +45,7 @@ client.service.login(account,account_password)
 
 #APi calls
 BAM_system_info = client.service.getSystemInfo()
-#print(BAM_system_info)
+print(BAM_system_info)
 
 for item in BAM_system_info.split("|"):
     print(item)

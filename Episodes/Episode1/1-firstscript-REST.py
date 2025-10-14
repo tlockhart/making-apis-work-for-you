@@ -52,9 +52,9 @@ response = requests.get(loginurl)
 
 # print login
 #print response
-#print response.text
-#print response.status_code
-#print response.json()
+print(f"My Response: {response.text}") # has quotes
+print(f"Status Code: {response.status_code}") # Status code
+print(f"Jason: {response.json()}") # no quotes
 
 # get the Token and put it into a variable
 token = str(response.json())
@@ -70,7 +70,7 @@ newdata = response.json()
 # print the items in response received from the server
 #print(newdata)
 for items in newdata.split("|"):
-    print items
+    print(f"My items: {items}")
 
 # logout from BAM
 response=requests.get(logouturl,headers=header)

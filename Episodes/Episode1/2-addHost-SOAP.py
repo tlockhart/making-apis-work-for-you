@@ -57,6 +57,7 @@ client.service.login(account,account_password)
 
 # api calls
 # configuration information
+# When attempting to pull config info, use 0 for the parentId, because it is the root
 config_info = client.service.getEntityByName(0,config_name,'Configuration')
 #print(config_info)
 
@@ -66,6 +67,10 @@ view_info = client.service.getEntityByName(config_info.id,view_name,'View')
 
 # addhost record
 hostrecordname = hostname +"."+ zone
+# in param add .id to view_info (name) to get the id
+# Set ttl = -1 for default
+# when not passing properties, add a black record
+#addHost only give you the id as response
 record = client.service.addHostRecord(view_info.id,hostrecordname,ipaddress, \
                                         -1,"reverseRecord=true|")
 print("Record ID Created:"+str(record))
@@ -75,6 +80,7 @@ print(showrecord)
 
 # add alias record link to the record created on line 49
 aliasrecordname = alias+"."+zone
+
 aliasrecord = client.service.addAliasRecord(view_info.id,aliasrecordname, \
                                                hostrecordname,-1,"" )
 print("--------")
