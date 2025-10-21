@@ -108,7 +108,7 @@ token = token.split()[2]+" "+token.split()[3]
 # set header value for the next methods
 header={'Authorization':token,'Content-Type':'application/json'}
 
-# get configuration
+# get configuration to get the server
 response = requests.get(
                         getEntityByNameurl,
                         params=getEntityByNameparams,
@@ -128,11 +128,15 @@ response = requests.get(
                         params=serverparams,
                         headers=header
                         )
+
+# Store serverinfo from response
 serverinfo = response.json()
 print(serverinfo)
+
+# connected = false, disables the server, Enable by setting property to true
 serverinfo['properties'] = serverinfo['properties'] + "connected=false|"
 
-# disable bdds1
+# disable bdds1, sending json data
 response = requests.put(
                         updateurl,
                         json=serverinfo,
@@ -159,7 +163,7 @@ response = requests.get(
 
 bdds1interface = response.json()[0]
 
-# replace server Parameters
+# replace server Parameters for new server
 replaceparams['serverId'] = serverinfo['id']
 replaceparams['defaultInterface'] = bdds1newip
 servicesIPv4Address = "servicesIPv4Address="+bdds1newip+"|"
@@ -172,7 +176,10 @@ response = requests.put(
                         headers=header
                         )
 print(response.text)
+
+# Create a deployment params for server deploy call
 deployparams['serverId'] = serverinfo['id']
+
 reponse = requests.post(
                         deployurl,
                         params=deployparams,
