@@ -25,12 +25,15 @@ limitations under the License.
 '''
 from zeep import Client
 from getpass import getpass
+
 #Parameters
 BAMAddress="bam.lab.corp"
 # SSL is unverified in this script see 1-firstscript-SOAP.py in this dir for
 # example on how to make sure ssl certificate is verified.
 url="http://"+BAMAddress+"/Services/API?wsdl"
 account="api"
+
+# Password Prompt
 account_password=getpass("Enter Password: ")
 
 #api session

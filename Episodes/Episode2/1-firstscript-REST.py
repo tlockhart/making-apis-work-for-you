@@ -43,7 +43,7 @@ getsysinfourl = mainurl+"getSystemInfo?"
 # logout method
 logouturl = mainurl+"logout?"
 
-# login to BAM
+# login to BAM: Requests library will encode into ASCII characters
 response = requests.get(loginurl, params=param, verify=bamcert)
 
 # print login

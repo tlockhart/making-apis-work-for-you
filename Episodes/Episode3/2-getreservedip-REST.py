@@ -37,6 +37,7 @@ s.verify = bamcert
 # Login method
 # http://bam.lab.corp/Services/REST/v1/login?username=api&password=pass
 loginurl = mainurl+"login?"
+# login params
 param = {"username":user,"password":password}
 
 # getsysinfo method

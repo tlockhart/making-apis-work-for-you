@@ -29,6 +29,7 @@ from zeep.transports import Transport
 import getpass
 
 #Parameters
+print("Starting...")
 BAMAddress="bam.lab.corp"
 url="https://"+BAMAddress+"/Services/API?wsdl"
 account="api"

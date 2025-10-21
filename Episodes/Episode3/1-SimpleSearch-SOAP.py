@@ -56,6 +56,7 @@ print(searchresults)
     if "GATEWAY" in items.properties:
         print items"""
 
+# "F*1" wildcard character
 searchresults = client.service.searchByCategory("F*1","RESOURCE_RECORD",0,50)
 for items in searchresults:
     print(items.name + " " +items.type)

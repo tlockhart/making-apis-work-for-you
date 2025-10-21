@@ -54,7 +54,7 @@ viewname="default"
 config_name="main"
 
 # assignNextAvailableIP4Address
-# get configuration information
+# get configuration information: Parent ID for configuration will be 0 (zero), or ""
 configinfo = client.service.getEntityByName(0,config_name,"Configuration")
 configurationId = configinfo.id
 

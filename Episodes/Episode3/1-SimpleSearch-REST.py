@@ -47,6 +47,7 @@ logouturl = mainurl+"logout?"
 
 # searchByObjectTypes
 searchByObjectTypesurl = mainurl+"searchByObjectTypes?"
+# bbds1 = "192.168.2"
 searchByObjectTypesparams = {
                                 "keyword":"192.168.2",
                                 "types":"IP4Address",
