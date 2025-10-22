@@ -36,7 +36,7 @@ logging.basicConfig(filename="debug-soap.log",
                     datefmt='%m/%d/%Y %I:%M:%S %p')
 
 # remove this if your are using python 3.x
-input = raw_input
+# input = raw_input
 
 # Parameters
 BAMAddress="bam.lab.corp"
@@ -45,6 +45,7 @@ account=input("Enter User Name: ")
 account_password=getpass("Enter Password: ")
 hostrecordname = "oldtest.lab.corp"
 
+# Could also use getEntity
 def gethostrecordwithhint(bam_url, login_user, login_password, host_record_name):
     """get the host record FQDN and return the entity details
     """
@@ -83,9 +84,11 @@ def deletehostrecord(bam_url, login_user, login_password, host_record):
     client.service.logout()
     # return the records from function
 
+# Get Host Record
 hostrecords = gethostrecordwithhint(bam_url=url,
                                     login_user=account,
                                     login_password=account_password,
                                     host_record_name=hostrecordname)
 
+# Delete Call
 deletehostrecord(url,account,account_password,hostrecords[0])

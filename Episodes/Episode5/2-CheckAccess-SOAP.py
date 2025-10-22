@@ -27,7 +27,7 @@ limitations under the License.
 from zeep import Client
 from getpass import getpass
 
-input = raw_input
+# input = raw_input
 
 BAMAddress="bam.lab.corp"
 url="http://"+BAMAddress+"/Services/API?wsdl"
